@@ -1,0 +1,11 @@
+D:\projects\vs\graphicGame\graphicGame\graphicGame\bin\Debug\graphicGame.exe.config
+D:\projects\vs\graphicGame\graphicGame\graphicGame\bin\Debug\graphicGame.exe
+D:\projects\vs\graphicGame\graphicGame\graphicGame\bin\Debug\graphicGame.pdb
+D:\projects\vs\graphicGame\graphicGame\graphicGame\obj\Debug\graphicGame.csproj.AssemblyReference.cache
+D:\projects\vs\graphicGame\graphicGame\graphicGame\obj\Debug\graphicGame.csproj.SuggestedBindingRedirects.cache
+D:\projects\vs\graphicGame\graphicGame\graphicGame\obj\Debug\graphicGame.Properties.Resources.resources
+D:\projects\vs\graphicGame\graphicGame\graphicGame\obj\Debug\graphicGame.csproj.GenerateResource.cache
+D:\projects\vs\graphicGame\graphicGame\graphicGame\obj\Debug\graphicGame.csproj.CoreCompileInputs.cache
+D:\projects\vs\graphicGame\graphicGame\graphicGame\obj\Debug\graphicGame.exe
+D:\projects\vs\graphicGame\graphicGame\graphicGame\obj\Debug\graphicGame.pdb
+D:\projects\vs\graphicGame\graphicGame\graphicGame\obj\Debug\graphicGame.Window.resources
