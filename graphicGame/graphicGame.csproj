@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\MapLogic.cs" />
     <Compile Include="Models\Figure.cs" />
     <Compile Include="Models\Cell.cs" />
     <Compile Include="Controll\Map.cs" />

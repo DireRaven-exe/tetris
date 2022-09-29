@@ -15,9 +15,9 @@ namespace graphicGame
  * @param figure - фигура, которой принадлежит клетка
  */
 
-            private int coordinateX;
-            private int coordinateY;
-            private Figure figure;
+        private int coordinateX;
+        private int coordinateY;
+        private Figure figure;
 
         /**
          * Cell(Cell *pFigure) - конструктор, копирующий значения одной клетки в другую
@@ -26,31 +26,30 @@ namespace graphicGame
          * @param valueFigure - значение фигуры, к которой клетка будет относиться
          */
         public Cell(Cell pFigure)
-            {
-                CoordinateX = pFigure.CoordinateX;
-                CoordinateY = pFigure.CoordinateY;
-                Figure = pFigure.Figure;
-            }
+        {
+            CoordinateX = pFigure.CoordinateX;
+            CoordinateY = pFigure.CoordinateY;
+            Figure = pFigure.Figure;
+        }
 
             /**
              * Cell() - конструктор пустой клетки
              */
-            public Cell()
-            {
-                CoordinateX = 0;
-                CoordinateY = 0;
-                Figure = null;
-            }
+        public Cell()
+        {
+        }
 
         /**
-             * Cell() - конструктор клетки пренадлежащей к фигурам
-             */
+        * Cell() - конструктор клетки пренадлежащей к фигурам
+        */
         public Cell(Figure valueFigure)
         {
             CoordinateX = 0;
             CoordinateY = 0;
             Figure = valueFigure;
         }
+
+
 
         /**
          * 
@@ -60,10 +59,10 @@ namespace graphicGame
          * @param valueFigure - фигура, к которой принадлежит клетка
          */
         public Cell(int valueX, int valueY, Figure valueFigure)
-            {
-                CoordinateY = valueY;
-                CoordinateX = valueX;
-                Figure = valueFigure;
+        {
+            CoordinateY = valueY;
+            CoordinateX = valueX;
+            Figure = valueFigure;
             }
         /**
          * Cell(int valueX, int valueY) - конструктор класса Клетка
@@ -71,9 +70,9 @@ namespace graphicGame
          */
         public Cell(int valueX, int valueY)
         {
-                CoordinateY = valueY;
-                CoordinateX = valueX;
-                Figure = new Figure(figure);
+            CoordinateY = valueY;
+            CoordinateX = valueX;
+            Figure = new Figure(figure);
         }
 
         public void SetCell(int valueX, int valueY, Figure valueFigure)
@@ -83,9 +82,8 @@ namespace graphicGame
             Figure = valueFigure;
         }
 
-
         public Figure Figure { get => figure; set => figure = value; }
             public int CoordinateY { get => coordinateY; set => coordinateY = value; }
             public int CoordinateX { get => coordinateX; set => coordinateX = value; }
-        }
+    }
 }

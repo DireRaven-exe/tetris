@@ -9,3 +9,14 @@ D:\projects\vs\graphicGame\graphicGame\graphicGame\obj\Debug\graphicGame.csproj.
 D:\projects\vs\graphicGame\graphicGame\graphicGame\obj\Debug\graphicGame.exe
 D:\projects\vs\graphicGame\graphicGame\graphicGame\obj\Debug\graphicGame.pdb
 D:\projects\vs\graphicGame\graphicGame\graphicGame\obj\Debug\graphicGame.Window.resources
+F:\sklad\tetris\graphicGame\bin\Debug\graphicGame.exe.config
+F:\sklad\tetris\graphicGame\bin\Debug\graphicGame.exe
+F:\sklad\tetris\graphicGame\bin\Debug\graphicGame.pdb
+F:\sklad\tetris\graphicGame\obj\Debug\graphicGame.csproj.AssemblyReference.cache
+F:\sklad\tetris\graphicGame\obj\Debug\graphicGame.csproj.SuggestedBindingRedirects.cache
+F:\sklad\tetris\graphicGame\obj\Debug\graphicGame.Window.resources
+F:\sklad\tetris\graphicGame\obj\Debug\graphicGame.Properties.Resources.resources
+F:\sklad\tetris\graphicGame\obj\Debug\graphicGame.csproj.GenerateResource.cache
+F:\sklad\tetris\graphicGame\obj\Debug\graphicGame.csproj.CoreCompileInputs.cache
+F:\sklad\tetris\graphicGame\obj\Debug\graphicGame.exe
+F:\sklad\tetris\graphicGame\obj\Debug\graphicGame.pdb
