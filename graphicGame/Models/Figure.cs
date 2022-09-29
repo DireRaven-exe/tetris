@@ -10,7 +10,7 @@ namespace graphicGame
     /**
      * Перечисление типов фигур
      */
-    enum TypeFigures { O, T, I, L, J, Z, S };
+    enum TypeFigures { O, T, I, L, J, Z, S};
 
     /**
      * class Figure - класс отвечающий за объект фигура
@@ -86,6 +86,27 @@ namespace graphicGame
             CurrentRotate = valueFigure.CurrentRotate;
         }
 
+        /**
+         * void CopyFigure(Figure *valueFigure) - функция, которая позволяет
+         * копировать значения одной фигуры в другую
+         * @param valueFigure - заданная фигура
+         */
+        public void CopyFigure(Figure valueFigure)
+        {
+            arrayCell = valueFigure.arrayCell;
+            TypeFigure = valueFigure.TypeFigure;
+            CurrentRotate = valueFigure.CurrentRotate;
+        }
+
+        /**
+         * void SetCoordinates(int x, int y) - функция для установки определённых координат
+         * @param valueFigure - заданная фигура
+         */
+        public void SetCoordinates(int x, int y)
+        {
+            CoordinateX = x;
+            CoordinateY = y;
+        }
         /**
          * int Height() - функция вычисляющая высоту фигуры
          * @return значение высоты фигуры
@@ -357,6 +378,7 @@ namespace graphicGame
                 arrayCell.Add(new Cell(CoordinateX + 1, CoordinateY + 2, this));
             }
         }
+     
 
         /** void ChangeCoordinate()
          * функция, которая назначает координаты клеток фигуры по типу фигуры

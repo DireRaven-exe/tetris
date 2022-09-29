@@ -9,12 +9,10 @@ namespace graphicGame
         MapController mapContorller;
         int size;
         Timer timer;
-        //Label labelScore;
         public Window()
         {
             InitializeComponent();
             timer = new Timer();
-            //labelScore = new Label();
             KeyUp += new KeyEventHandler(keyFunction);
             Init();
         }
@@ -42,7 +40,7 @@ namespace graphicGame
         {
             mapContorller = new MapController(17, 9);
             size = 25;
-            labelScore.Text = "Score " + mapContorller.map.points;
+            labelScore.Text = "Score: " + mapContorller.mapLogic.points;
             timer.Interval = 500;
             mapContorller.map.AddFigure();
             timer.Tick += new EventHandler(update);
@@ -52,15 +50,13 @@ namespace graphicGame
 
         private void update(object sender, EventArgs e)
         {
-            //mapContorller.map.ResetFigure();;
-            if (!mapContorller.CheckMap())
+            if (mapContorller.IsDefeat())
             {
                 timer.Stop();
             }
-            labelScore.Text = "Score " + mapContorller.map.points;
+            labelScore.Text = "Score: " + mapContorller.mapLogic.points;
             mapContorller.MoveDown();
-            timer.Interval = 500;
-            //DrawFigure(e.Graphics);
+            timer.Interval = 300;
             
             Invalidate();
         }
@@ -78,28 +74,37 @@ namespace graphicGame
             }
         }
 
+
         public void DrawFigure(Graphics g)
         {
             for (int i = 0; i < mapContorller.map.heightMap; i++)
-            { 
+            {
                 for (int j = 0; j < mapContorller.map.widthMap; j++)
                 {
-                    if (mapContorller.map.arrayCell[i, j].Figure != null)
-                    {
-                        g.FillRectangle(Brushes.Green, new Rectangle(50 + j * (size) + 1, 50 + i * (size) + 1, size - 1, size - 1));
-                    }
-                    else
+                    Figure figure = mapContorller.map.arrayCell[i, j].Figure;
+                    if (figure == null)
                     {
                         g.FillRectangle(Brushes.White, new Rectangle(50 + j * (size) + 1, 50 + i * (size) + 1, size - 1, size - 1));
                     }
+                    else
+                    {
+                        if (figure == mapContorller.map.currentFigure)
+                        {
+                            g.FillRectangle(mapContorller.map.GetColor(figure), new Rectangle(50 + j * (size) + 1, 50 + i * (size) + 1, size - 1, size - 1));
+                        }
+                        else if (figure == mapContorller.map.OtherFigures)
+                        {
+                            g.FillRectangle(Brushes.Gray, new Rectangle(50 + j * (size) + 1, 50 + i * (size) + 1, size - 1, size - 1));
+                        }
+                    }
                 }
-            } 
+            }
         }
 
         private void OnPaint(object sender, PaintEventArgs e)
         {
             DrawGrid(e.Graphics);
-            DrawFigure(e.Graphics);           
+            DrawFigure(e.Graphics);
         }
 
         private void label1_Click(object sender, EventArgs e)

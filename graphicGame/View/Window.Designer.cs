@@ -36,15 +36,17 @@
             this.labelScore.AutoSize = true;
             this.labelScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.labelScore.ForeColor = System.Drawing.Color.Black;
-            this.labelScore.Location = new System.Drawing.Point(311, 39);
+            this.labelScore.Location = new System.Drawing.Point(321, 226);
             this.labelScore.Name = "labelScore";
-            this.labelScore.Size = new System.Drawing.Size(70, 25);
+            this.labelScore.Size = new System.Drawing.Size(139, 25);
             this.labelScore.TabIndex = 0;
             this.labelScore.Text = "Tetris Scores";
             this.labelScore.Click += new System.EventHandler(this.label1_Click);
+            this.labelScore.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaint);
             // 
             // Window
             // 
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(484, 561);
             this.Controls.Add(this.labelScore);
             this.Name = "Window";
