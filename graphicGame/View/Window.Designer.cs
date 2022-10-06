@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.labelScore = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelScore
@@ -44,12 +45,26 @@
             this.labelScore.Click += new System.EventHandler(this.label1_Click);
             this.labelScore.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(321, 136);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Next Figure";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // Window
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(484, 561);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelScore);
             this.Name = "Window";
+            this.Load += new System.EventHandler(this.Window_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaint);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -58,6 +73,7 @@
 
         #endregion
         public System.Windows.Forms.Label labelScore;
+        public System.Windows.Forms.Label label1;
     }
 }
 

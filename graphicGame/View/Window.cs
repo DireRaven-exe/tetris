@@ -41,6 +41,7 @@ namespace graphicGame
             mapContorller = new MapController(17, 9);
             size = 25;
             labelScore.Text = "Score: " + mapContorller.mapLogic.points;
+            label1.Text = "Next Figure";
             timer.Interval = 500;
             mapContorller.map.AddFigure();
             timer.Tick += new EventHandler(update);
@@ -101,15 +102,41 @@ namespace graphicGame
             }
         }
 
+        public void DrawNextFigure(Graphics g)
+        {
+            for (int i = 0; i < mapContorller.map.nextCells.GetLength(0); i++)
+            {
+                for (int j = 0; j < mapContorller.map.nextCells.GetLength(1); j++)
+                {
+
+                    if (mapContorller.map.nextCells[i, j].Figure == mapContorller.map.nextFigure)
+                    {
+                        g.FillRectangle(Brushes.Green, new Rectangle(300 + j * (size) + 1, 50 + i * (size) + 1, size - 1, size - 1));
+                    }
+                }
+            }
+        }
+
         private void OnPaint(object sender, PaintEventArgs e)
         {
             DrawGrid(e.Graphics);
             DrawFigure(e.Graphics);
+            DrawNextFigure(e.Graphics);
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Window_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+  
         }
     }
 }

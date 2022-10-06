@@ -55,13 +55,12 @@
                     {
                         ClearLine(i);
                         DownCells(i);
-                        points += 5;
+                        points += 10;
                         countCells = 0;
                     }
                 }
                 countCells = 0;
             }
         }
-        
     }
 }
