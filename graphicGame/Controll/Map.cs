@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Collections.Generic;
 
 namespace graphicGame
 {
@@ -19,6 +20,7 @@ namespace graphicGame
         public Figure nextFigure;
         public Figure OtherFigures;
         public Cell[,] arrayCell;
+        public Cell[,] nextCells;
 
         /**
          * Map(int height, int width) - Конструктор класса поле
@@ -32,17 +34,25 @@ namespace graphicGame
             widthMap = width;
 
             arrayCell = new Cell[heightMap, widthMap]; 
+            nextCells = new Cell[4, 4];
 
-            OtherFigures = new Figure(6, 0);
-            currentFigure = new Figure(widthMap / 2, 0);
-            nextFigure = new Figure(0, 0);
-            nextFigure.ChoiceOfFigure(0, 0);
+            OtherFigures = new Figure();
+            currentFigure = new Figure();
+            nextFigure = new Figure(x: 0, y: 0);
 
             for (int i = 0; i < heightMap; i++)
             {
                 for (int j = 0; j < widthMap; j++)
                 {
                     arrayCell[i, j] = new Cell(j, i, null);
+                }
+            }
+
+            for (int i = 0; i < nextCells.GetLength(0); i++)
+            {
+                for (int j = 0; j < nextCells.GetLength(1); j++)
+                {
+                    nextCells[i, j] = new Cell(j, i, null);
                 }
             }
         }
@@ -90,18 +100,51 @@ namespace graphicGame
                     }
                 }
             }
-            currentFigure.CopyFigure(nextFigure);
-            currentFigure.SetCoordinates((widthMap / 2) - 1, 0);
-            nextFigure.ChoiceOfFigure(0, 0);
-
+            currentFigure = nextFigure;
+            currentFigure.SetCoordinates(x: (widthMap / 2) - 1, y: 0);
             currentFigure.ChangeCoordinate();
-            
-            
+
+            nextFigure = new Figure(0, 0);
+            SetCells(nextFigure);
             
             for (int i = 0; i < currentFigure.ArrayCell.Count; i++)
             {
                 Cell v = currentFigure.ArrayCell[i];
                 arrayCell[v.CoordinateY, v.CoordinateX].Figure = currentFigure;
+            }
+        }
+
+        /*
+         * Метод, который присваивает значения клеткам мини-поля координаты следующей фигуры
+         */
+        private void SetCells(Figure value)
+        {
+            
+
+            for (int i = 0; i < nextCells.GetLength(0); i++)
+            {
+                for (int j = 0; j < nextCells.GetLength(1); j++)
+                {
+                    nextCells[i, j].Figure = null;
+                }
+            }
+
+
+            for (int k = 0; k < value.ArrayCell.Count; k++)
+            {
+                for (int i = 0; i < nextCells.GetLength(0); i++)
+                {
+                    for (int j = 0; j < nextCells.GetLength(1); j++)
+                    {
+                        int figureCellX = value.ArrayCell[k].CoordinateX;
+                        int figureCellY = value.ArrayCell[k].CoordinateY;
+
+                        if (figureCellX == nextCells[i, j].CoordinateX && figureCellY == nextCells[i, j].CoordinateY)
+                        {
+                            nextCells[i, j].Figure = value;
+                        }
+                    }
+                }
             }
         }
 

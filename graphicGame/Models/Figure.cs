@@ -70,6 +70,10 @@ namespace graphicGame
             ChoiceOfFigure(x, y);
         }
 
+        public Figure()
+        {
+
+        }
 
 
         /**
@@ -82,18 +86,6 @@ namespace graphicGame
             arrayCell = valueFigure.arrayCell;
             CoordinateX = valueFigure.CoordinateX;
             CoordinateY = valueFigure.CoordinateY;
-            TypeFigure = valueFigure.TypeFigure;
-            CurrentRotate = valueFigure.CurrentRotate;
-        }
-
-        /**
-         * void CopyFigure(Figure *valueFigure) - функция, которая позволяет
-         * копировать значения одной фигуры в другую
-         * @param valueFigure - заданная фигура
-         */
-        public void CopyFigure(Figure valueFigure)
-        {
-            arrayCell = valueFigure.arrayCell;
             TypeFigure = valueFigure.TypeFigure;
             CurrentRotate = valueFigure.CurrentRotate;
         }
@@ -140,6 +132,12 @@ namespace graphicGame
             }
             return maxX + 1 - CoordinateX;
         }
+        public void ResetFigure()
+        {
+            arrayCell.Clear();
+            TypeFigure = 0;
+            CurrentRotate = 0;
+        }
 
         /**
          * void ChoiceOfFigure(int x, int y) - функция, которая задаёт
@@ -152,6 +150,7 @@ namespace graphicGame
         {
             CoordinateX = x;
             CoordinateY = y;
+            this.ResetFigure();
             Random rand = new Random();
             TypeFigure = RandomEnumValue<TypeFigures>();
             BeginRotate(1 + rand.Next(4));
